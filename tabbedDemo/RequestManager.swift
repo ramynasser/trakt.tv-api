@@ -13,7 +13,7 @@ class RequestManager {
             "trakt-api-version":"2",
             "trakt-api-key":"c1044fe1db036f0bb7b548e6ff2f3afe9f65337ed25bf323865724830104e56a",
             ]
-        Alamofire.request(.GET,"https://api.trakt.tv/search/movie?query="+searchText,headers: headers).responseJSON {
+        Alamofire.request(.GET,"https://api.trakt.tv/search/movie?query="+searchText+"&extended=full,images",headers: headers).responseJSON {
             response in
             if let Json = response.result.value {
                 for i in 0..<Json.count{

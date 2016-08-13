@@ -14,6 +14,7 @@ class CustomViewCell: UITableViewCell {
     
     @IBOutlet weak var title_details_Label: UILabel!
     
+    @IBOutlet weak var overview_details_label: UILabel!
     @IBOutlet weak var imageview: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

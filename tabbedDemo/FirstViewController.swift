@@ -8,7 +8,10 @@ class FirstViewController: UITableViewController{
     var titleArray=[String]()
     var yearArray=[Int]()
     var overViewArray=[String]()
-    var imagesResults=[UIImage]()
+    var imagesArray_url=[NSURL]()
+    
+    
+    
     @IBOutlet  var tb1JSON: UITableView!
     var isNewDataLoading=false
     var item = 10
@@ -30,6 +33,7 @@ class FirstViewController: UITableViewController{
                         titleArray=[]
                         yearArray=[]
                         overViewArray=[]
+                        imagesArray_url=[]
                         RequestPaginatation(1, item: item)
                         isNewDataLoading = true
                     
@@ -45,7 +49,7 @@ class FirstViewController: UITableViewController{
             "trakt-api-version":"2",
             "trakt-api-key":"c1044fe1db036f0bb7b548e6ff2f3afe9f65337ed25bf323865724830104e56a",
             ]
-        Alamofire.request(.GET, "https://api.trakt.tv/movies/popular",  headers: headers).responseJSON { response in
+        Alamofire.request(.GET, "https://api.trakt.tv/movies/popular?extended=full,images",  headers: headers).responseJSON { response in
         
             if let JSON_flag = response.result.value{
                 
@@ -54,10 +58,19 @@ class FirstViewController: UITableViewController{
                     let title=JSON_flag[i]["title"] as! String
                     
                     let year=JSON_flag[i]["year"] as! Int
-                    
+                    let overview=JSON_flag[i]["overview"] as! String
                     self.titleArray.append(title)
                     self.yearArray.append(year)
-                     }
+                    self.overViewArray.append(overview)
+                    
+                     let images = JSON_flag[i]["images"] as? [String: AnyObject]
+                     let posters = images!["poster"] as? [String: AnyObject]
+                     let mediumPoster = posters!["thumb"] as? String
+                     let mediumPosterURL = NSURL(string: mediumPoster!)
+                     self.imagesArray_url.append(mediumPosterURL!)
+                     
+ 
+                }
             }
            else {
             
@@ -73,47 +86,7 @@ class FirstViewController: UITableViewController{
     
     //make request for image 
     
-    
-    func makeImageRequest(){
-        let headers = [
-            "Content-Type":"application/json",
-            "trakt-api-version":"2",
-            "trakt-api-key":"c1044fe1db036f0bb7b548e6ff2f3afe9f65337ed25bf323865724830104e56a",
-            ]
-        Alamofire.request(.GET, "https://api.trakt.tv/movies/popular?extended=full,images",  headers: headers).responseJSON { response in
-            if response.result.isFailure{
-                
-                self.imagesResults.append(UIImage(named:"noposter")!)
-            }
-            else{
-                
-                
-                if let JSON_flag = response.result.value{
-                self.numberofRow=JSON_flag.count
-                for i in 0..<self.numberofRow{
-                    let images=JSON_flag[i]["images"] as! String
-                    
-                    if !images.isEmpty {
-                
-                        self.imagesResults.append(UIImage(named:images)!)
-                    }
-                    else{
-                        self.imagesResults.append(UIImage(named:"noposter")!)
-                    
-                    }
-                    
-                    
-                }
-            }
-           
-            if self.titleArray.count > 0 {
-                self.tb1JSON.reloadData()
-                
-            }
-        }
-    }
-    
-    }
+  
     
     func RequestPaginatation(page:Int ,item:Int){
         //for download more movie if te user scroll down
@@ -122,21 +95,27 @@ class FirstViewController: UITableViewController{
             "trakt-api-version":"2",
             "trakt-api-key":"c1044fe1db036f0bb7b548e6ff2f3afe9f65337ed25bf323865724830104e56a",
             ]
-        Alamofire.request(.GET, "https://api.trakt.tv/movies/popular?page="+String(page)+"&limit="+String(item),  headers: headers).responseJSON { response in
+        Alamofire.request(.GET, "https://api.trakt.tv/movies/popular?page="+String(page)+"&limit="+String(item)+"&extended=full,images",  headers: headers).responseJSON { response in
             
             
             if let JSON_flag = response.result.value {
                 self.numberofRow=JSON_flag.count
                 print("number of utem of paging : \(self.numberofRow)")
                 for i in 0..<JSON_flag.count{
+                    
                     let title=JSON_flag[i]["title"] as! String
+                    
                     let year=JSON_flag[i]["year"] as! Int
-                    
-                    
-                    print(title)
-                    //  print(year)
+                    let overview=JSON_flag[i]["overview"] as! String
                     self.titleArray.append(title)
                     self.yearArray.append(year)
+                    self.overViewArray.append(overview)
+                    
+                    let images = JSON_flag[i]["images"] as? [String: AnyObject]
+                    let posters = images!["poster"] as? [String: AnyObject]
+                    let mediumPoster = posters!["thumb"] as? String
+                    let mediumPosterURL = NSURL(string: mediumPoster!)
+                    self.imagesArray_url.append(mediumPosterURL!)
                 }
             }
             else{
@@ -160,18 +139,23 @@ class FirstViewController: UITableViewController{
             cell.title_details_Label.text = self.titleArray[indexPath.section]
             let myString = String(self.yearArray[indexPath.section])
             cell.yeardetailLabel.text=myString
+            cell.overview_details_label.text=self.overViewArray[indexPath.section]
+            
+            cell.imageView?.af_setImageWithURL(imagesArray_url[indexPath.section])
         }
         else{
             cell.yeardetailLabel.text="NO"
         
         }
         
-        
-        cell.backgroundColor = UIColor.cyanColor()
+        cell.backgroundColor = UIColor.lightGrayColor()
         cell.layer.borderColor = UIColor.blackColor().CGColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 4
         cell.clipsToBounds = true
+        
+        
+        
         return cell
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

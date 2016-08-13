@@ -31,7 +31,6 @@ let searchController = UISearchController(searchResultsController: nil)
     }
     func updateSearchResults() {
         searchResults = requestManager.searchResults
-        overviewResults=requestManager.overview
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,6 +51,8 @@ let searchController = UISearchController(searchResultsController: nil)
         
        
         cell.titlLabel.text = searchResults[indexPath.section]["movie"]["title"].stringValue
+        cell.overViewLabel.text = searchResults[indexPath.section]["movie"]["overview"].stringValue
+        print("\(searchResults[indexPath.section]["movie"]["overview"].stringValue)")
         if String(searchResults[indexPath.section]["movie"]["year"]).containsString("null"){
         cell.YearLabel.text = "No Year "
         }
@@ -59,17 +60,7 @@ let searchController = UISearchController(searchResultsController: nil)
         cell.YearLabel.text = String(searchResults[indexPath.section]["movie"]["year"])
         }
         
-
-        if  overviewResults.count <= indexPath.section{
-            print("no overview for this movie")
-            cell.overViewLabel.text = "no overview for this movie"
-        }
-        else{
-            cell.overViewLabel.text = overviewResults[indexPath.section]["overview"].stringValue
-            print("\(overviewResults[indexPath.section]["overview"].stringValue)")
- 
-        }
-  
+        
         
         
         cell.backgroundColor = UIColor.cyanColor()
@@ -96,39 +87,16 @@ let searchController = UISearchController(searchResultsController: nil)
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    /*
-    func search(query:String )->([JSON]){
-    //for download more movie if te user scroll down
-    let headers = [
-        "Content-Type":"application/json",
-        "trakt-api-version":"2",
-        "trakt-api-key":"c1044fe1db036f0bb7b548e6ff2f3afe9f65337ed25bf323865724830104e56a",
-        ]
-    Alamofire.request(.GET,"https://api.trakt.tv/search/movie?query="+query,  headers: headers).responseJSON { response in
-        
-        if let Json = response.result.value {
-            var countttt=Json.count
-            for i in 0..<Json.count{
-                let title=Json[i]["title"] as! String
-                let year=Json[i]["year"] as! Int
-                self.filtered.append(Json[i])
-                print(title)
-                
-                
-            }
-        }
-        else{
-            
-            print("error")
-        }
+    
+    
         
     }
     
-    }
+
   
 
-*/
-}
+
+
 
     extension SecondViewController: UISearchBarDelegate {
         func searchBarSearchButtonClicked(searchBar: UISearchBar) {
