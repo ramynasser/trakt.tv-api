@@ -23,7 +23,7 @@ class FirstViewController: UITableViewController{
         
             
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+       self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         tableView.separatorColor=UIColor.lightGrayColor()
         UITabBar.appearance().barTintColor = UIColor.darkGrayColor()
     }
@@ -201,7 +201,8 @@ class FirstViewController: UITableViewController{
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor=UIColor.lightGrayColor()
         return     1
 
     }

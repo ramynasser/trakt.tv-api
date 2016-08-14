@@ -6,7 +6,7 @@ import SwiftyJSON
 
 class SecondViewController: UITableViewController{
     @IBOutlet var b2JSON: UITableView!
-    
+    var isNewDataLoading=true
    let searchController = UISearchController(searchResultsController: nil)
     
     var searchResults = [JSON]() {
@@ -24,13 +24,45 @@ class SecondViewController: UITableViewController{
         searchController.searchBar.placeholder = "Enter keyword..."
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        
  
         definesPresentationContext = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SecondViewController.updateSearchResults), name: "searchResultsUpdated", object: nil)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor=UIColor.lightGrayColor()
+        UITabBar.appearance().barTintColor = UIColor.darkGrayColor()
+        if (self.tableView.contentSize.height < self.tableView.frame.size.height) {
+            self.tableView.scrollEnabled = false;
+            self.tableView.pagingEnabled=false
+        }
+        else {
+            self.tableView.scrollEnabled = true;
+            self.tableView.pagingEnabled=false
+        }    }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        if scrollView == tableView{
+            
+            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height){
+            
+                self.tableView.pagingEnabled=false
+                }
+            
+            }
+           
+        }
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor=UIColor.lightGrayColor()
+        
+        
+        
     }
-    override func prefersStatusBarHidden() -> Bool {
-        return false
-    }
+    
+    
+    
+    
     func updateSearchResults() {
         searchResults = requestManager.searchResults
     }
@@ -39,6 +71,8 @@ class SecondViewController: UITableViewController{
         
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor=UIColor.lightGrayColor()
         return searchResults.count
     }
     
@@ -56,7 +90,7 @@ class SecondViewController: UITableViewController{
         cell.overViewLabel.text = searchResults[indexPath.section]["movie"]["overview"].stringValue
         print("\(searchResults[indexPath.section]["movie"]["overview"].stringValue)")
         if String(searchResults[indexPath.section]["movie"]["year"]).containsString("null"){
-        cell.YearLabel.text = "No Year "
+        cell.YearLabel.text = ""
         }
         else{
         cell.YearLabel.text = String(searchResults[indexPath.section]["movie"]["year"])
@@ -64,15 +98,17 @@ class SecondViewController: UITableViewController{
         
         
         
-        
-        cell.backgroundColor = UIColor.cyanColor()
-        cell.layer.borderColor = UIColor.blackColor().CGColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 4
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        //tableView.separatorColor=UIColor.lightGrayColor()
+        cell.backgroundColor = UIColor.whiteColor()
+        //cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 2
         cell.clipsToBounds = true
         return cell
     }
-    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.00001
+    }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
