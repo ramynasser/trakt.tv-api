@@ -7,7 +7,8 @@ import SwiftyJSON
 class SecondViewController: UITableViewController{
     @IBOutlet var b2JSON: UITableView!
     
-let searchController = UISearchController(searchResultsController: nil)
+   let searchController = UISearchController(searchResultsController: nil)
+    
     var searchResults = [JSON]() {
         didSet {
             tableView.reloadData()
@@ -23,7 +24,8 @@ let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "Enter keyword..."
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        
+ 
+        definesPresentationContext = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SecondViewController.updateSearchResults), name: "searchResultsUpdated", object: nil)
     }
     override func prefersStatusBarHidden() -> Bool {

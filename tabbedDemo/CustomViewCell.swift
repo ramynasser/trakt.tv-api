@@ -10,6 +10,7 @@ import UIKit
 
 class CustomViewCell: UITableViewCell {
 
+    @IBOutlet weak var loadingindicator: UIActivityIndicatorView!
     @IBOutlet weak var yeardetailLabel: UILabel!
     
     @IBOutlet weak var title_details_Label: UILabel!

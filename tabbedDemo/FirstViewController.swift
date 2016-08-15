@@ -19,6 +19,13 @@ class FirstViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         makejsonRequest()
+        //self.tableView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        
+            
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor=UIColor.lightGrayColor()
+        UITabBar.appearance().barTintColor = UIColor.darkGrayColor()
     }
     
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -43,6 +50,16 @@ class FirstViewController: UITableViewController{
             }
         }
     }
+
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor=UIColor.lightGrayColor()
+        
+    
+    
+    }
+ 
     func makejsonRequest(){
         let headers = [
             "Content-Type":"application/json",
@@ -135,37 +152,48 @@ class FirstViewController: UITableViewController{
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCellWithIdentifier("cell",forIndexPath:indexPath ) as! CustomViewCell
+        
+        
+        
         if titleArray.count != 0{
-            cell.title_details_Label.text = self.titleArray[indexPath.section]
-            let myString = String(self.yearArray[indexPath.section])
+            cell.title_details_Label.textAlignment = .Left
+            cell.yeardetailLabel.textAlignment = .Left
+            cell.overview_details_label.textAlignment = .Left
+                
+                
+            cell.title_details_Label.text = self.titleArray[indexPath.row]
+            let myString = String(self.yearArray[indexPath.row])
             cell.yeardetailLabel.text=myString
-            cell.overview_details_label.text=self.overViewArray[indexPath.section]
-            
-            cell.imageView?.af_setImageWithURL(imagesArray_url[indexPath.section])
+            cell.overview_details_label.text=self.overViewArray[indexPath.row]
+            dispatch_async(dispatch_get_main_queue(), {
+                cell.imageView?.af_setImageWithURL(self.imagesArray_url[indexPath.row])
+
+            })
         }
         else{
             cell.yeardetailLabel.text="NO"
         
         }
-        
-        cell.backgroundColor = UIColor.lightGrayColor()
-        cell.layer.borderColor = UIColor.blackColor().CGColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 4
-        cell.clipsToBounds = true
-        
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor=UIColor.lightGrayColor()
+        cell.backgroundColor = UIColor.blackColor()
         
         
         return cell
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        tableView.separatorColor=UIColor.lightGrayColor()
+        return titleArray.count
     }
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clearColor()
         return headerView
+ 
     }
+ 
+ 
     
    
     override func didReceiveMemoryWarning() {
@@ -173,7 +201,8 @@ class FirstViewController: UITableViewController{
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return     titleArray.count
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        return     1
 
     }
 

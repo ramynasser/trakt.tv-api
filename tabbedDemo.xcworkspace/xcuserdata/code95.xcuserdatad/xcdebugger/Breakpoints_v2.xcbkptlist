@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tabbedDemo/SecondViewController.swift"
-            timestampString = "492739528.713258"
+            timestampString = "492890305.760704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "SecondViewController"
             landmarkType = "3">
          </BreakpointContent>

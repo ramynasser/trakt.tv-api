@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		180065EC1D5DEE18001B434A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180065EB1D5DEE18001B434A /* AlamofireImage.framework */; };
-		18019D471D5D4297007EC41B /* TableViewCellControllorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18019D461D5D4297007EC41B /* TableViewCellControllorTableViewCell.swift */; };
+		18019D471D5D4297007EC41B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18019D461D5D4297007EC41B /* TableViewCell.swift */; };
 		18019D491D5D5F9E007EC41B /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18019D481D5D5F9D007EC41B /* CustomViewCell.swift */; };
 		18081E9E1D5CCA2B00C5A25D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18081E9D1D5CCA2B00C5A25D /* RequestManager.swift */; };
 		1856F4541D5B5D78009A3442 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1856F4531D5B5D78009A3442 /* Podfile */; };
@@ -20,13 +20,12 @@
 		185C65D71D542D0000078B02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C65D51D542D0000078B02 /* Main.storyboard */; };
 		185C65D91D542D0000078B02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185C65D81D542D0000078B02 /* Assets.xcassets */; };
 		185C65DC1D542D0100078B02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C65DA1D542D0100078B02 /* LaunchScreen.storyboard */; };
-		185C65E41D5433EB00078B02 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C65E31D5433EB00078B02 /* ThirdViewController.swift */; };
 		793D20E583BF4B0514A9CA1A /* Pods_tabbedDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5175090021098F9DD954E8 /* Pods_tabbedDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		180065EB1D5DEE18001B434A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/tabbedDemo-fwxprdhqigeuqebyqbefidsxgpka/Build/Products/Debug-iphonesimulator/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
-		18019D461D5D4297007EC41B /* TableViewCellControllorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellControllorTableViewCell.swift; path = ../TableViewCellControllorTableViewCell.swift; sourceTree = "<group>"; };
+		18019D461D5D4297007EC41B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ../TableViewCell.swift; sourceTree = "<group>"; };
 		18019D481D5D5F9D007EC41B /* CustomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		18081E9D1D5CCA2B00C5A25D /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		1856F4531D5B5D78009A3442 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
@@ -40,7 +39,6 @@
 		185C65D81D542D0000078B02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185C65DB1D542D0100078B02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185C65DD1D542D0100078B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		185C65E31D5433EB00078B02 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		7B5175090021098F9DD954E8 /* Pods_tabbedDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tabbedDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F564342B3DB7FA605B4C8F33 /* Pods-tabbedDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabbedDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tabbedDemo/Pods-tabbedDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FD436A98942EE46726C659DF /* Pods-tabbedDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabbedDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-tabbedDemo/Pods-tabbedDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,16 +81,15 @@
 			isa = PBXGroup;
 			children = (
 				1856F4531D5B5D78009A3442 /* Podfile */,
-				18019D461D5D4297007EC41B /* TableViewCellControllorTableViewCell.swift */,
 				185C65CF1D542D0000078B02 /* AppDelegate.swift */,
 				185C65D11D542D0000078B02 /* FirstViewController.swift */,
 				185C65D31D542D0000078B02 /* SecondViewController.swift */,
-				185C65E31D5433EB00078B02 /* ThirdViewController.swift */,
 				185C65D51D542D0000078B02 /* Main.storyboard */,
 				185C65D81D542D0000078B02 /* Assets.xcassets */,
 				185C65DA1D542D0100078B02 /* LaunchScreen.storyboard */,
 				185C65DD1D542D0100078B02 /* Info.plist */,
 				18081E9D1D5CCA2B00C5A25D /* RequestManager.swift */,
+				18019D461D5D4297007EC41B /* TableViewCell.swift */,
 				18019D481D5D5F9D007EC41B /* CustomViewCell.swift */,
 			);
 			path = tabbedDemo;
@@ -245,9 +242,8 @@
 				185C65D41D542D0000078B02 /* SecondViewController.swift in Sources */,
 				18019D491D5D5F9E007EC41B /* CustomViewCell.swift in Sources */,
 				185C65D01D542D0000078B02 /* AppDelegate.swift in Sources */,
-				185C65E41D5433EB00078B02 /* ThirdViewController.swift in Sources */,
 				185C65D21D542D0000078B02 /* FirstViewController.swift in Sources */,
-				18019D471D5D4297007EC41B /* TableViewCellControllorTableViewCell.swift in Sources */,
+				18019D471D5D4297007EC41B /* TableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
