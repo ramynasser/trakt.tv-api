@@ -88,7 +88,7 @@ class SecondViewController: UITableViewController{
        
         cell.titlLabel.text = searchResults[indexPath.section]["movie"]["title"].stringValue
         cell.overViewLabel.text = searchResults[indexPath.section]["movie"]["overview"].stringValue
-        print("\(searchResults[indexPath.section]["movie"]["overview"].stringValue)")
+       // print("\(searchResults[indexPath.section]["movie"]["overview"].stringValue)")
         if String(searchResults[indexPath.section]["movie"]["year"]).containsString("null"){
         cell.YearLabel.text = ""
         }

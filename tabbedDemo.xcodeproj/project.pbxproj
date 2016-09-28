@@ -11,6 +11,7 @@
 		18019D471D5D4297007EC41B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18019D461D5D4297007EC41B /* TableViewCell.swift */; };
 		18019D491D5D5F9E007EC41B /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18019D481D5D5F9D007EC41B /* CustomViewCell.swift */; };
 		18081E9E1D5CCA2B00C5A25D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18081E9D1D5CCA2B00C5A25D /* RequestManager.swift */; };
+		180B69C81D61CDE900AD6BC2 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B69C71D61CDE900AD6BC2 /* ThirdViewController.swift */; };
 		1856F4541D5B5D78009A3442 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1856F4531D5B5D78009A3442 /* Podfile */; };
 		1856F4571D5B5EC0009A3442 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1856F4551D5B5EC0009A3442 /* Alamofire.framework */; };
 		1856F4581D5B5EC0009A3442 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1856F4561D5B5EC0009A3442 /* SwiftyJSON.framework */; };
@@ -20,6 +21,24 @@
 		185C65D71D542D0000078B02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C65D51D542D0000078B02 /* Main.storyboard */; };
 		185C65D91D542D0000078B02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185C65D81D542D0000078B02 /* Assets.xcassets */; };
 		185C65DC1D542D0100078B02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185C65DA1D542D0100078B02 /* LaunchScreen.storyboard */; };
+		1864FDD91D9A7C130081DDDC /* ListOrdersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FDD31D9A7C130081DDDC /* ListOrdersConfigurator.swift */; };
+		1864FDDA1D9A7C130081DDDC /* ListOrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FDD41D9A7C130081DDDC /* ListOrdersInteractor.swift */; };
+		1864FDDB1D9A7C130081DDDC /* ListOrdersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FDD51D9A7C130081DDDC /* ListOrdersModels.swift */; };
+		1864FDDC1D9A7C130081DDDC /* ListOrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FDD61D9A7C130081DDDC /* ListOrdersPresenter.swift */; };
+		1864FDDD1D9A7C130081DDDC /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FDD71D9A7C130081DDDC /* ListOrdersViewController.swift */; };
+		1864FDDE1D9A7C130081DDDC /* ListOrdersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FDD81D9A7C130081DDDC /* ListOrdersWorker.swift */; };
+		1864FDE91D9A82EE0081DDDC /* ListOrdersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FDE81D9A82EE0081DDDC /* ListOrdersRouter.swift */; };
+		1864FDFD1D9A8E150081DDDC /* OrdersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FDFC1D9A8E150081DDDC /* OrdersWorker.swift */; };
+		1864FE041D9A8E300081DDDC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE011D9A8E300081DDDC /* Movie.swift */; };
+		1864FE091D9A8FAF0081DDDC /* OrdersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE061D9A8FAF0081DDDC /* OrdersAPI.swift */; };
+		1864FE0B1D9A8FAF0081DDDC /* OrdersMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE081D9A8FAF0081DDDC /* OrdersMemStore.swift */; };
+		1864FE141D9AA2CD0081DDDC /* ShowOrderConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE0D1D9AA2CD0081DDDC /* ShowOrderConfigurator.swift */; };
+		1864FE151D9AA2CD0081DDDC /* ShowOrderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE0E1D9AA2CD0081DDDC /* ShowOrderInteractor.swift */; };
+		1864FE161D9AA2CD0081DDDC /* ShowOrderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE0F1D9AA2CD0081DDDC /* ShowOrderModels.swift */; };
+		1864FE171D9AA2CD0081DDDC /* ShowOrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE101D9AA2CD0081DDDC /* ShowOrderPresenter.swift */; };
+		1864FE181D9AA2CD0081DDDC /* ShowOrderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE111D9AA2CD0081DDDC /* ShowOrderRouter.swift */; };
+		1864FE191D9AA2CD0081DDDC /* ShowOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE121D9AA2CD0081DDDC /* ShowOrderViewController.swift */; };
+		1864FE1A1D9AA2CD0081DDDC /* ShowOrderWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864FE131D9AA2CD0081DDDC /* ShowOrderWorker.swift */; };
 		793D20E583BF4B0514A9CA1A /* Pods_tabbedDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5175090021098F9DD954E8 /* Pods_tabbedDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +47,7 @@
 		18019D461D5D4297007EC41B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ../TableViewCell.swift; sourceTree = "<group>"; };
 		18019D481D5D5F9D007EC41B /* CustomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		18081E9D1D5CCA2B00C5A25D /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		180B69C71D61CDE900AD6BC2 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		1856F4531D5B5D78009A3442 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		1856F4551D5B5EC0009A3442 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/tabbedDemo-fwxprdhqigeuqebyqbefidsxgpka/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		1856F4561D5B5EC0009A3442 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/tabbedDemo-fwxprdhqigeuqebyqbefidsxgpka/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -39,6 +59,24 @@
 		185C65D81D542D0000078B02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185C65DB1D542D0100078B02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185C65DD1D542D0100078B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1864FDD31D9A7C130081DDDC /* ListOrdersConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOrdersConfigurator.swift; sourceTree = "<group>"; };
+		1864FDD41D9A7C130081DDDC /* ListOrdersInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOrdersInteractor.swift; sourceTree = "<group>"; };
+		1864FDD51D9A7C130081DDDC /* ListOrdersModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOrdersModels.swift; sourceTree = "<group>"; };
+		1864FDD61D9A7C130081DDDC /* ListOrdersPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOrdersPresenter.swift; sourceTree = "<group>"; };
+		1864FDD71D9A7C130081DDDC /* ListOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
+		1864FDD81D9A7C130081DDDC /* ListOrdersWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOrdersWorker.swift; sourceTree = "<group>"; };
+		1864FDE81D9A82EE0081DDDC /* ListOrdersRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOrdersRouter.swift; sourceTree = "<group>"; };
+		1864FDFC1D9A8E150081DDDC /* OrdersWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersWorker.swift; sourceTree = "<group>"; };
+		1864FE011D9A8E300081DDDC /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		1864FE061D9A8FAF0081DDDC /* OrdersAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersAPI.swift; sourceTree = "<group>"; };
+		1864FE081D9A8FAF0081DDDC /* OrdersMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersMemStore.swift; sourceTree = "<group>"; };
+		1864FE0D1D9AA2CD0081DDDC /* ShowOrderConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOrderConfigurator.swift; sourceTree = "<group>"; };
+		1864FE0E1D9AA2CD0081DDDC /* ShowOrderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOrderInteractor.swift; sourceTree = "<group>"; };
+		1864FE0F1D9AA2CD0081DDDC /* ShowOrderModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOrderModels.swift; sourceTree = "<group>"; };
+		1864FE101D9AA2CD0081DDDC /* ShowOrderPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOrderPresenter.swift; sourceTree = "<group>"; };
+		1864FE111D9AA2CD0081DDDC /* ShowOrderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOrderRouter.swift; sourceTree = "<group>"; };
+		1864FE121D9AA2CD0081DDDC /* ShowOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOrderViewController.swift; sourceTree = "<group>"; };
+		1864FE131D9AA2CD0081DDDC /* ShowOrderWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowOrderWorker.swift; sourceTree = "<group>"; };
 		7B5175090021098F9DD954E8 /* Pods_tabbedDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tabbedDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F564342B3DB7FA605B4C8F33 /* Pods-tabbedDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabbedDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tabbedDemo/Pods-tabbedDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FD436A98942EE46726C659DF /* Pods-tabbedDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tabbedDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-tabbedDemo/Pods-tabbedDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,10 +118,15 @@
 		185C65CE1D542D0000078B02 /* tabbedDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1864FE1B1D9ABDA10081DDDC /* scenes */,
+				1864FE051D9A8FAF0081DDDC /* Services */,
+				1864FDFE1D9A8E300081DDDC /* Models */,
+				1864FDFB1D9A8DCD0081DDDC /* workers */,
 				1856F4531D5B5D78009A3442 /* Podfile */,
 				185C65CF1D542D0000078B02 /* AppDelegate.swift */,
 				185C65D11D542D0000078B02 /* FirstViewController.swift */,
 				185C65D31D542D0000078B02 /* SecondViewController.swift */,
+				180B69C71D61CDE900AD6BC2 /* ThirdViewController.swift */,
 				185C65D51D542D0000078B02 /* Main.storyboard */,
 				185C65D81D542D0000078B02 /* Assets.xcassets */,
 				185C65DA1D542D0100078B02 /* LaunchScreen.storyboard */,
@@ -93,6 +136,68 @@
 				18019D481D5D5F9D007EC41B /* CustomViewCell.swift */,
 			);
 			path = tabbedDemo;
+			sourceTree = "<group>";
+		};
+		1864FDD21D9A7BE60081DDDC /* ListMovies */ = {
+			isa = PBXGroup;
+			children = (
+				1864FDE81D9A82EE0081DDDC /* ListOrdersRouter.swift */,
+				1864FDD31D9A7C130081DDDC /* ListOrdersConfigurator.swift */,
+				1864FDD41D9A7C130081DDDC /* ListOrdersInteractor.swift */,
+				1864FDD51D9A7C130081DDDC /* ListOrdersModels.swift */,
+				1864FDD61D9A7C130081DDDC /* ListOrdersPresenter.swift */,
+				1864FDD71D9A7C130081DDDC /* ListOrdersViewController.swift */,
+				1864FDD81D9A7C130081DDDC /* ListOrdersWorker.swift */,
+			);
+			name = ListMovies;
+			sourceTree = "<group>";
+		};
+		1864FDFB1D9A8DCD0081DDDC /* workers */ = {
+			isa = PBXGroup;
+			children = (
+				1864FDFC1D9A8E150081DDDC /* OrdersWorker.swift */,
+			);
+			name = workers;
+			sourceTree = "<group>";
+		};
+		1864FDFE1D9A8E300081DDDC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1864FE011D9A8E300081DDDC /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1864FE051D9A8FAF0081DDDC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1864FE061D9A8FAF0081DDDC /* OrdersAPI.swift */,
+				1864FE081D9A8FAF0081DDDC /* OrdersMemStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1864FE0C1D9AA2B40081DDDC /* showMovie */ = {
+			isa = PBXGroup;
+			children = (
+				1864FE0D1D9AA2CD0081DDDC /* ShowOrderConfigurator.swift */,
+				1864FE0E1D9AA2CD0081DDDC /* ShowOrderInteractor.swift */,
+				1864FE0F1D9AA2CD0081DDDC /* ShowOrderModels.swift */,
+				1864FE101D9AA2CD0081DDDC /* ShowOrderPresenter.swift */,
+				1864FE111D9AA2CD0081DDDC /* ShowOrderRouter.swift */,
+				1864FE121D9AA2CD0081DDDC /* ShowOrderViewController.swift */,
+				1864FE131D9AA2CD0081DDDC /* ShowOrderWorker.swift */,
+			);
+			name = showMovie;
+			sourceTree = "<group>";
+		};
+		1864FE1B1D9ABDA10081DDDC /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1864FDD21D9A7BE60081DDDC /* ListMovies */,
+				1864FE0C1D9AA2B40081DDDC /* showMovie */,
+			);
+			name = scenes;
 			sourceTree = "<group>";
 		};
 		9420E2F54ED154D6D1429671 /* Frameworks */ = {
@@ -238,12 +343,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1864FE151D9AA2CD0081DDDC /* ShowOrderInteractor.swift in Sources */,
 				18081E9E1D5CCA2B00C5A25D /* RequestManager.swift in Sources */,
 				185C65D41D542D0000078B02 /* SecondViewController.swift in Sources */,
+				1864FE0B1D9A8FAF0081DDDC /* OrdersMemStore.swift in Sources */,
+				1864FE191D9AA2CD0081DDDC /* ShowOrderViewController.swift in Sources */,
+				1864FDE91D9A82EE0081DDDC /* ListOrdersRouter.swift in Sources */,
+				1864FDDE1D9A7C130081DDDC /* ListOrdersWorker.swift in Sources */,
+				1864FE091D9A8FAF0081DDDC /* OrdersAPI.swift in Sources */,
 				18019D491D5D5F9E007EC41B /* CustomViewCell.swift in Sources */,
+				1864FDDD1D9A7C130081DDDC /* ListOrdersViewController.swift in Sources */,
+				1864FE141D9AA2CD0081DDDC /* ShowOrderConfigurator.swift in Sources */,
+				180B69C81D61CDE900AD6BC2 /* ThirdViewController.swift in Sources */,
+				1864FE1A1D9AA2CD0081DDDC /* ShowOrderWorker.swift in Sources */,
+				1864FE161D9AA2CD0081DDDC /* ShowOrderModels.swift in Sources */,
 				185C65D01D542D0000078B02 /* AppDelegate.swift in Sources */,
+				1864FDDA1D9A7C130081DDDC /* ListOrdersInteractor.swift in Sources */,
+				1864FE181D9AA2CD0081DDDC /* ShowOrderRouter.swift in Sources */,
+				1864FDD91D9A7C130081DDDC /* ListOrdersConfigurator.swift in Sources */,
+				1864FE041D9A8E300081DDDC /* Movie.swift in Sources */,
 				185C65D21D542D0000078B02 /* FirstViewController.swift in Sources */,
+				1864FDDB1D9A7C130081DDDC /* ListOrdersModels.swift in Sources */,
 				18019D471D5D4297007EC41B /* TableViewCell.swift in Sources */,
+				1864FDFD1D9A8E150081DDDC /* OrdersWorker.swift in Sources */,
+				1864FE171D9AA2CD0081DDDC /* ShowOrderPresenter.swift in Sources */,
+				1864FDDC1D9A7C130081DDDC /* ListOrdersPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
