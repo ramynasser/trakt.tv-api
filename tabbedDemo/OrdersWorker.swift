@@ -12,13 +12,13 @@ class OrdersWorker
     
     
     
-  var ordersStore: OrdersStoreProtocol
- 
-  init(ordersStore: OrdersStoreProtocol)
-  {
-    self.ordersStore = ordersStore
-  }
- 
+    var ordersStore: OrdersStoreProtocol
+    
+    init(ordersStore: OrdersStoreProtocol)
+    {
+        self.ordersStore = ordersStore
+    }
+    
     func fetchMovies() -> [Movie] {
         var orders = [Movie]()
         
@@ -97,7 +97,7 @@ class OrdersWorker
     
     func fetchMoviesForpagination(page:Int ,item:Int) -> [Movie] {
         var orders = [Movie]()
-        
+        print("make pagination for \(item)")
         let headers = [
             "Content-Type":"application/json",
             "trakt-api-version":"2",
@@ -106,7 +106,6 @@ class OrdersWorker
         Alamofire.request(.GET, "https://api.trakt.tv/movies/popular?page="+String(page)+"&limit="+String(item)+"&extended=full,images",  headers: headers).responseJSON { response in
             
             if let JSON_flag = response.result.value{
-                print("done request")
                 JSON_flag.count
                 for i in 0..<JSON_flag.count{
                     
@@ -170,22 +169,21 @@ class OrdersWorker
         return orders
     }
     
-  
-  func fetchOrders(completionHandler: (orders: [Movie]) -> Void)
-  {
-    ordersStore.fetchOrders { (orders: () throws -> [Movie]) -> Void in
-      do {
-        let orders = try self.fetchMovies()
-        completionHandler(orders: orders)
-      } catch {
-        completionHandler(orders: [])
-      }
+    
+    func fetchOrders(completionHandler: (orders: [Movie]) -> Void)
+    {
+        ordersStore.fetchOrders { (orders: () throws -> [Movie]) -> Void in
+            do {
+                let orders = try self.fetchMovies()
+                completionHandler(orders: orders)
+            } catch {
+                completionHandler(orders: [])
+            }
+        }
     }
-  }
- //, "https://api.trakt.tv/movies/popular?page="+String(page)+"&limit="+String(item)+"&extended=full,images
- 
- 
-
+    
+    
+    
 }
 
 
@@ -201,16 +199,16 @@ class OrdersWorker
 
 protocol OrdersStoreProtocol
 {
-  // MARK: CRUD operations - Optional error
-  
-  func fetchOrders(completionHandler: (orders: [Movie], error: OrdersStoreError?) -> Void)
-  
-  // MARK: CRUD operations - Generic enum result type
-  
-  func fetchOrders(completionHandler: OrdersStoreFetchOrdersCompletionHandler)
-  // MARK: CRUD operations - Inner closure
-  
-  func fetchOrders(completionHandler: (orders: () throws -> [Movie]) -> Void)
+    // MARK: CRUD operations - Optional error
+    
+    func fetchOrders(completionHandler: (orders: [Movie], error: OrdersStoreError?) -> Void)
+    
+    // MARK: CRUD operations - Generic enum result type
+    
+    func fetchOrders(completionHandler: OrdersStoreFetchOrdersCompletionHandler)
+    // MARK: CRUD operations - Inner closure
+    
+    func fetchOrders(completionHandler: (orders: () throws -> [Movie]) -> Void)
 }
 
 // MARK: - Orders store CRUD operation results
@@ -219,23 +217,23 @@ typealias OrdersStoreFetchOrdersCompletionHandler = (result: OrdersStoreResult<[
 
 enum OrdersStoreResult<U>
 {
-  case Success(result: U)
-  case Failure(error: OrdersStoreError)
+    case Success(result: U)
+    case Failure(error: OrdersStoreError)
 }
 
 // MARK: - Orders store CRUD operation errors
 
 enum OrdersStoreError: Equatable, ErrorType
 {
-  case CannotFetch(String)
+    case CannotFetch(String)
 }
 
 func ==(lhs: OrdersStoreError, rhs: OrdersStoreError) -> Bool
 {
-  switch (lhs, rhs) {
-  case (.CannotFetch(let a), .CannotFetch(let b)) where a == b: return true
-  default: return false
-  }
- }
+    switch (lhs, rhs) {
+    case (.CannotFetch(let a), .CannotFetch(let b)) where a == b: return true
+    default: return false
+    }
+}
 
 

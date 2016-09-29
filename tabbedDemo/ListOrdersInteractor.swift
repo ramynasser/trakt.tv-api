@@ -8,7 +8,8 @@ import AlamofireImage
 protocol ListMoviesInteractorInput
 {
     func fetchMovies(request: ListMovies.FetchMovies.Request)
-    func fetchMoviesForpagination(request: ListMovies.FetchMovies.RequestPagination)
+    func fetchMoviesForpagination(request: ListMovies.FetchMovies.RequestPagination )
+
 
     var orders: [Movie]? { get }
 }
@@ -27,19 +28,20 @@ class ListOrdersInteractor: ListMoviesInteractorInput
     
     // MARK: Business logic
   
-    func fetchMoviesForpagination(request: ListMovies.FetchMovies.RequestPagination)
-    {
-        self.orders = ordersWorker.fetchMoviesForpagination(request.page! , item: request.limit!)
-        
-        let response = ListMovies.FetchMovies.Response(Movies: orders!)
-        self.output.presentFetchedMovies(response)
-        
-    }
-    func fetchMovies(request: ListMovies.FetchMovies.Request)
     
-        {
+    func fetchMovies(request: ListMovies.FetchMovies.Request)
+    {
         ordersWorker.fetchOrders { (orders) -> Void in
             self.orders = orders
+            let response = ListMovies.FetchMovies.Response(Movies: orders)
+            self.output.presentFetchedMovies(response)
+        }
+    }
+    
+    func fetchMoviesForpagination(request: ListMovies.FetchMovies.RequestPagination) {
+        
+        ordersWorker.fetchOrders { (orders) -> Void in
+            self.orders = self.ordersWorker.fetchMoviesForpagination(request.page!, item: request.limit!)
             let response = ListMovies.FetchMovies.Response(Movies: orders)
             self.output.presentFetchedMovies(response)
         }

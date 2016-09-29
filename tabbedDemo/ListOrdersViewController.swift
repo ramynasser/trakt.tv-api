@@ -10,7 +10,7 @@ protocol ListMoviesViewControllerInput
 protocol ListMoviesViewControllerOutput
 {
   func fetchMovies(request: ListMovies.FetchMovies.Request)
- func fetchMoviesForpagination(request: ListMovies.FetchMovies.RequestPagination )
+  func fetchMoviesForpagination(request: ListMovies.FetchMovies.RequestPagination )
   
   var orders: [Movie]? { get }
   
